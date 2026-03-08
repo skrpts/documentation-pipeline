@@ -1,0 +1,40 @@
+# --- Identity ---
+name: "documentation-pipeline"
+display_name: "Documentation Pipeline"
+description: "Analyses code and generates technical documentation as clean markdown"
+version: "1.0.0"
+engine: ">=1.0.0"
+
+# --- Attribution ---
+author:
+  name: "skrptiq"
+  url: "https://hub.skrptiq.ai"
+
+licence: "MIT"
+repository: "https://github.com/skrpts/documentation-pipeline"
+
+# --- Discovery (Hub) ---
+category: "developer"
+tags:
+  - "documentation"
+  - "api-docs"
+  - "automation"
+
+# --- Security & Access ---
+requires:
+  services:
+    - "anthropic-claude"
+  permissions: []
+  data_handling:
+    - "source-code"
+
+# --- Contents ---
+contents:
+  skills: 2
+  prompts: 3
+  workflows: 1
+  services: 0
+  sources: 1
+  documents: 0
+  assets: 0
+  total: 7
