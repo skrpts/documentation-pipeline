@@ -5,7 +5,7 @@ title: Code Review
 description: "Reviews source code for bugs, vulnerabilities, performance issues, and style"
 tags: [Tested]
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 

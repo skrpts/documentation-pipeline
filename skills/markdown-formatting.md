@@ -5,7 +5,7 @@ title: Markdown Formatting
 description: "Converts unstructured content into clean, well-structured markdown"
 tags: [Tested]
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 
