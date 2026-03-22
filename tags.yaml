@@ -3,3 +3,6 @@
 
 - name: Tested
   colour: "#3b82f6"
+
+- name: Draft
+  colour: "#f59e0b"

@@ -2,27 +2,30 @@
 type: skill
 id: markdown-formatting
 title: Markdown Formatting
-description: "Converts unstructured content into clean, well-structured markdown"
+description: "Structures and formats documentation as clean, consistent markdown with proper headings, code blocks, and tables"
 tags: [Tested]
 connections:
   - target: llm-service
     type: runs_on
+  - target: documentation-standards
+    type: references
 ---
 
 ## Capability
 
-Takes unstructured or poorly formatted content and produces clean, well-structured markdown.
+Takes draft documentation and applies consistent markdown formatting: heading hierarchy, fenced code blocks with language hints, parameter tables, cross-reference links, and table of contents generation. Ensures the output is readable both as raw markdown and when rendered. Validates structural consistency (no skipped heading levels, no orphaned links, no empty sections).
 
 ## When to Use
 
-- Converting meeting notes to documentation
-- Formatting raw text into readable documents
-- Standardising document structure
+- Final formatting pass on generated documentation
+- Standardizing markdown structure across multiple documents
+- Converting loosely formatted notes into publication-ready docs
+- Assembling multiple documentation sections into a single coherent document
 
 ## Inputs
 
-Raw text, notes, or loosely formatted content
+Draft documentation content, formatting standards reference
 
 ## Outputs
 
-Clean markdown with appropriate headings, lists, emphasis, and code blocks
+Clean markdown with proper heading hierarchy (H1 → H2 → H3, no skips), fenced code blocks with language tags, consistent parameter tables, and uniform formatting throughout

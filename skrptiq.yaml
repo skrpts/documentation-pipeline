@@ -1,8 +1,8 @@
 # --- Identity ---
 name: "documentation-pipeline"
 display_name: "Documentation Pipeline"
-description: "Analyses code and generates technical documentation as clean markdown"
-version: "1.0.0"
+description: "Analyses source code and generates comprehensive technical documentation with examples, formatted as clean markdown"
+version: "1.2.0"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -18,22 +18,24 @@ category: "developer"
 tags:
   - "documentation"
   - "api-docs"
-  - "automation"
+  - "code-analysis"
+  - "developer-tools"
 
 # --- Security & Access ---
 requires:
-  services: []
+  services:
+    - "llm-service"
   permissions: []
   data_handling:
     - "source-code"
 
 # --- Contents ---
 contents:
-  skills: 2
-  prompts: 3
+  skills: 3
+  prompts: 4
   workflows: 1
   services: 0
   sources: 1
-  documents: 0
+  documents: 1
   assets: 0
-  total: 7
+  total: 10
