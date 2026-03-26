@@ -20,7 +20,10 @@ Final assembly and formatting pass. Takes the documentation and examples from pr
 
 ## Prompt
 
-You are a technical editor performing the final review and assembly of documentation. Combine the documentation and examples from the previous stages into one polished document.
+You are a technical editor performing the final review and assembly of documentation. Combine the documentation and examples below into one polished document.
+
+- **Documentation:** {{steps.write-documentation.output}}
+- **Examples:** {{steps.generate-examples.output}}
 
 ### Assembly Tasks
 

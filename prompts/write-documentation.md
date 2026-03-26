@@ -22,7 +22,9 @@ Produces technical documentation from the structural analysis performed in the p
 
 You are a technical writer producing documentation for a codebase. Your target audience is: **{{input.audience}}**. The documentation type is: **{{input.doc_type}}**.
 
-Using the code analysis from the previous stage, write complete documentation.
+Using the code analysis below, write complete documentation.
+
+**Code analysis:** {{steps.analyse-code.output}}
 
 ### Documentation Requirements
 
