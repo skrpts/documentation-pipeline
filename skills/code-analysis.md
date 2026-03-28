@@ -2,35 +2,56 @@
 type: skill
 id: code-analysis
 title: Code Analysis
-description: "Analyses source code structure, extracting functions, classes, modules, and their relationships for documentation purposes"
+description: "Analyses code for patterns, complexity, and potential bugs across common languages"
 tags: [Production, Tested]
 connections:
   - target: llm-service
     type: runs_on
+  - target: ollama-local
+    type: runs_on
+metadata:
+  complexity: medium
+  avg_tokens: 1200
+  supported_languages: [javascript, typescript, python, go, rust, java]
 ---
 
 ## Capability
 
-Analyses source code to extract its structural elements — functions, classes, modules, constants, type definitions, and their relationships. Produces a structured inventory that downstream documentation steps can work from. Supports JavaScript, TypeScript, Python, Go, Rust, Java, C#, and Ruby.
+Performs static analysis of source code to identify structural issues, excessive complexity, and potential bugs. Works across multiple languages by recognising common anti-patterns and language-specific pitfalls.
 
-## When to Use
+## Analysis Dimensions
 
-- Before generating documentation for unfamiliar code
-- Auditing a codebase for documentation coverage
-- Understanding module dependencies and public API surface
-- Preparing for a documentation sprint on legacy code
+### Complexity Assessment
 
-## Inputs
+- **Cyclomatic complexity** — counts independent paths through the code. Functions exceeding a threshold of 10 are flagged for refactoring.
+- **Cognitive complexity** — measures how difficult code is to understand, weighting nested control flow and breaks in linear flow.
+- **Function length** — flags functions exceeding 50 lines as candidates for decomposition.
 
-Source code (files, modules, or snippets), programming language
+### Pattern Detection
 
-## Outputs
+- Duplicated logic blocks that should be extracted into shared utilities
+- Deeply nested conditionals (more than 3 levels) suggesting the need for early returns or guard clauses
+- Unused variables, imports, or dead code paths
+- Inconsistent error handling (mixing thrown exceptions with returned error values)
+- Mutable state shared across scope boundaries without synchronisation
 
-Structured analysis: module overview, function/method signatures with parameters and return types, class hierarchies, exported vs internal symbols, dependency graph, complexity notes
+### Bug Risk Indicators
+
+- Off-by-one errors in loop boundaries and array indexing
+- Unchecked null or undefined access on values that may be absent
+- Race conditions in asynchronous code (missing awaits, unguarded shared state)
+- Type coercion pitfalls (loose equality, implicit conversions)
+- Resource leaks (opened file handles, database connections, or event listeners not cleaned up)
+
+## Output Format
+
+Returns a structured assessment with:
+
+1. **Summary** — one-paragraph overview of code quality
+2. **Findings** — list of issues, each with severity (critical / warning / info), file location, and explanation
+3. **Metrics** — cyclomatic complexity score, function count, average function length
+4. **Recommendations** — prioritised list of suggested improvements
 
 ## Limitations
 
-- Heuristic analysis — does not compile or execute the code
-- May miss dynamic patterns (metaprogramming, runtime-generated APIs, monkey-patching)
-- Type inference is best-effort for dynamically typed languages
-- Cannot follow imports across files when given a single snippet
+This skill performs heuristic analysis, not compilation or execution. It may produce false positives for metaprogramming patterns, generated code, or language-specific idioms it does not recognise. Always cross-reference findings with the actual runtime behaviour.
