@@ -3,7 +3,7 @@ type: prompt
 id: write-documentation
 title: Write Documentation
 description: "Generates detailed technical documentation from code analysis output"
-tags: [Production]
+tags: [Production, writing:documentation, technical:code]
 connections:
   - target: documentation-writing
     type: derived_from

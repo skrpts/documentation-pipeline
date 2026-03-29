@@ -3,7 +3,7 @@ type: source
 id: documentation-standards
 title: Documentation Standards
 description: "Reference standards for technical documentation format, structure, and content quality"
-tags: [Production]
+tags: [Production, writing:documentation, quality:standards]
 connections: []
 metadata:
   last_updated: "2026-03-01"

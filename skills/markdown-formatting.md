@@ -3,7 +3,7 @@ type: skill
 id: markdown-formatting
 title: Markdown Formatting
 description: "Structures and formats documentation as clean, consistent markdown with proper headings, code blocks, and tables"
-tags: [Tested]
+tags: [Tested, writing:documentation, utility:formatting]
 connections:
   - target: llm-service
     type: runs_on
