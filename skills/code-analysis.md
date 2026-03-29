@@ -3,7 +3,7 @@ type: skill
 id: code-analysis
 title: Code Analysis
 description: "Analyses code for patterns, complexity, and potential bugs across common languages"
-tags: [Production, Tested, writing:documentation, technical:code]
+tags: [Production, Tested, Code, Documentation]
 connections:
   - target: llm-service
     type: runs_on

@@ -3,7 +3,7 @@ type: document
 id: documentation-checklist
 title: Documentation Checklist
 description: "Working checklist to track documentation completeness before publication"
-tags: [Production, writing:documentation, quality:standards]
+tags: [Production, Documentation, Quality]
 connections: []
 ---
 

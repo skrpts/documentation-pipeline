@@ -3,7 +3,7 @@ type: prompt
 id: format-documentation
 title: Format Documentation
 description: "Assembles and formats all documentation sections into a polished, consistent markdown document"
-tags: [Production, writing:documentation, utility:formatting]
+tags: [Production, Documentation, Quality]
 connections:
   - target: markdown-formatting
     type: derived_from

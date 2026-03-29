@@ -3,7 +3,7 @@ type: prompt
 id: generate-examples
 title: Generate Examples
 description: "Creates practical, runnable usage examples showing common patterns and workflows"
-tags: [Production, writing:documentation, quality:standards]
+tags: [Production, Documentation, Learning]
 connections:
   - target: documentation-writing
     type: derived_from

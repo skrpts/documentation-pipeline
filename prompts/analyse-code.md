@@ -3,7 +3,7 @@ type: prompt
 id: analyse-code
 title: Analyse Code
 description: "Extracts structural information from source code for documentation generation"
-tags: [Production, writing:documentation, technical:code]
+tags: [Production, Code, Documentation]
 connections:
   - target: code-analysis
     type: derived_from

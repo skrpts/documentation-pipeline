@@ -3,7 +3,7 @@ type: workflow
 id: documentation-pipeline
 title: Documentation Pipeline
 description: "Analyses source code and generates detailed technical documentation with examples, formatted as clean markdown"
-tags: [Production, writing:documentation, quality:standards]
+tags: [Production, Documentation, Learning]
 connections:
   - target: code-analysis
     type: uses

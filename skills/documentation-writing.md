@@ -3,7 +3,7 @@ type: skill
 id: documentation-writing
 title: Documentation Writing
 description: "Produces technical documentation from code analysis, covering API references, guides, and module overviews"
-tags: [Production, writing:documentation, technical:code]
+tags: [Production, Code, Documentation, Writing]
 connections:
   - target: llm-service
     type: runs_on
