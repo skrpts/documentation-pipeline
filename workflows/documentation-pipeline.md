@@ -24,12 +24,12 @@ connections:
   - target: llm-service
     type: runs_on
   - target: structured-data-extraction
+    type: references
   - target: documentation-checklist
+    type: uses
 metadata:
   estimated_duration: "10-20 minutes"
   trigger: manual
-    type: uses
-    type: references
 ---
 
 ## Overview
