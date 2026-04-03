@@ -3,7 +3,7 @@ id: "de2c51ff-74ba-4c80-adb8-f2060d02d12b"
 name: "documentation-pipeline"
 display_name: "Documentation Pipeline"
 description: "Analyses source code and generates comprehensive technical documentation with examples, formatted as clean markdown"
-version: "1.0.5"
+version: "1.1.0"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -33,11 +33,11 @@ requires:
 
 # --- Contents ---
 contents:
-  skills: 3
-  prompts: 4
+  skills: 6
+  prompts: 3
   workflows: 1
   services: 1
   sources: 1
   documents: 1
   assets: 0
-  total: 11
+  total: 13

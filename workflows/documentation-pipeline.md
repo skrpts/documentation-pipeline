@@ -9,21 +9,25 @@ connections:
     type: uses
   - target: documentation-writing
     type: uses
-  - target: markdown-formatting
-    type: uses
   - target: analyse-code
     type: uses
   - target: write-documentation
     type: uses
   - target: generate-examples
     type: uses
-  - target: format-documentation
-    type: uses
   - target: documentation-standards
     type: references
   - target: llm-service
     type: runs_on
   - target: documentation-checklist
+    type: uses
+  - target: brief-compliance-check
+    type: uses
+  - target: consistency-check
+    type: uses
+  - target: format-conversion
+    type: uses
+  - target: defang-content
     type: uses
 metadata:
   estimated_duration: "10-20 minutes"
