@@ -23,8 +23,6 @@ connections:
     type: references
   - target: llm-service
     type: runs_on
-  - target: structured-data-extraction
-    type: references
   - target: documentation-checklist
     type: uses
 metadata:
