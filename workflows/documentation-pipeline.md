@@ -9,12 +9,6 @@ connections:
     type: uses
   - target: documentation-writing
     type: uses
-  - target: analyse-code
-    type: uses
-  - target: write-documentation
-    type: uses
-  - target: generate-examples
-    type: uses
   - target: documentation-standards
     type: references
   - target: llm-service
