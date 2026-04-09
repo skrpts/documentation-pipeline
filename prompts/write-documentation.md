@@ -24,7 +24,7 @@ You are a technical writer producing documentation for a codebase. Your target a
 
 Using the code analysis below, write complete documentation.
 
-**Code analysis:** {{steps.analyse-code.output}}
+**Code analysis:** {{steps.Code Analysis.output}}
 
 ### Documentation Requirements
 

@@ -20,8 +20,8 @@ Produces practical usage examples that demonstrate how to use the code in real s
 
 You are a developer advocate writing usage examples for technical documentation. Using the code analysis and documentation below, create a set of practical, runnable examples.
 
-- **Code analysis:** {{steps.analyse-code.output}}
-- **Documentation:** {{steps.write-documentation.output}}
+- **Code analysis:** {{steps.Code Analysis.output}}
+- **Documentation:** {{steps.Documentation Writing.output}}
 
 ### Example Requirements
 
