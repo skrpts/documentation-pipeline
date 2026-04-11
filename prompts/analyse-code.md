@@ -4,6 +4,19 @@ id: analyse-code
 title: Analyse Code
 description: "Extracts structural information from source code for documentation generation"
 tags: [Production, Code, Documentation]
+inputs:
+  language:
+    label: "Language"
+    description: "The language"
+    example: "French"
+    required: true
+    type: text
+  source_code:
+    label: "Source Code"
+    description: "The code to review or analyse"
+    example: "[Paste source code here]"
+    required: true
+    type: text
 connections:
   - target: code-analysis
     type: derived_from

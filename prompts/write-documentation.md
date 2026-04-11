@@ -4,6 +4,19 @@ id: write-documentation
 title: Write Documentation
 description: "Generates detailed technical documentation from code analysis output"
 tags: [Production, Code, Documentation]
+inputs:
+  audience:
+    label: "Audience"
+    description: "Who this is for"
+    example: "Product managers at B2B SaaS companies"
+    required: true
+    type: text
+  doc_type:
+    label: "Documentation Type"
+    description: "The type of documentation to generate"
+    example: "API reference"
+    required: true
+    type: text
 connections:
   - target: documentation-writing
     type: derived_from
