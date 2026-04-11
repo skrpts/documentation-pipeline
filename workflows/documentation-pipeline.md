@@ -26,6 +26,20 @@ connections:
 metadata:
   estimated_duration: "10-20 minutes"
   trigger: manual
+execution:
+  - skill: "code-analysis"
+  - skill: "documentation-writing"
+    input_from: "code-analysis"
+  - skill: "format-conversion"
+    input_from: "documentation-writing"
+  - skill: "defang-content"
+    input_from: "format-conversion"
+  - skill: "documentation-checklist"
+    input_from: "defang-content"
+  - skill: "brief-compliance-check"
+    input_from: "defang-content"
+  - skill: "consistency-check"
+    input_from: "defang-content"
 ---
 
 ## Overview
