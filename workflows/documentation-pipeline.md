@@ -28,20 +28,6 @@ metadata:
   trigger: manual
 execution:
   - skill: "code-analysis"
-  - skill: "documentation-writing"
-    input_from: "code-analysis"
-  - skill: "format-conversion"
-    input_from: "documentation-writing"
-  - skill: "defang-content"
-    input_from: "format-conversion"
-  - skill: "documentation-checklist"
-    input_from: "defang-content"
-  - skill: "brief-compliance-check"
-    input_from: "defang-content"
-  - skill: "consistency-check"
-    input_from: "defang-content"
-execution:
-  - skill: "code-analysis"
     step_type: "synthesis"
   - skill: "documentation-writing"
     step_type: "generation"
