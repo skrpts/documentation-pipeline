@@ -31,22 +31,17 @@ execution:
     step_type: "synthesis"
   - skill: "documentation-writing"
     step_type: "generation"
-    input_from: "code-analysis"
   - skill: "format-conversion"
     step_type: "content"
-    input_from: "documentation-writing"
   - skill: "defang-content"
     step_type: "content"
-    input_from: "format-conversion"
+  - parallel:
+    - skill: "brief-compliance-check"
+      step_type: "review"
+    - skill: "consistency-check"
+      step_type: "review"
   - skill: "documentation-checklist"
     step_type: "review"
-    input_from: "defang-content"
-  - skill: "brief-compliance-check"
-    step_type: "review"
-    input_from: "defang-content"
-  - skill: "consistency-check"
-    step_type: "review"
-    input_from: "defang-content"
 ---
 
 ## Overview
