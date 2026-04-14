@@ -26,6 +26,15 @@ connections:
 metadata:
   estimated_duration: "10-20 minutes"
   trigger: manual
+output_step: "documentation-writing"
+composite_steps:
+  - "code-analysis"
+  - "documentation-writing"
+  - "documentation-checklist"
+  - "brief-compliance-check"
+  - "consistency-check"
+  - "format-conversion"
+  - "defang-content"
 execution:
   - skill: "code-analysis"
     step_type: "synthesis"
