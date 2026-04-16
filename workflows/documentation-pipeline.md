@@ -11,6 +11,8 @@ connections:
     type: uses
   - target: documentation-standards
     type: references
+  - target: language-polish
+    type: uses
   - target: llm-service
     type: runs_on
   - target: documentation-checklist
@@ -26,7 +28,7 @@ connections:
 metadata:
   estimated_duration: "10-20 minutes"
   trigger: manual
-output_step: "documentation-writing"
+output_step: "language-polish"
 composite_steps:
   - "code-analysis"
   - "documentation-writing"
@@ -35,6 +37,7 @@ composite_steps:
   - "consistency-check"
   - "format-conversion"
   - "defang-content"
+  - "language-polish"
 execution:
   - skill: "code-analysis"
     step_type: "synthesis"
@@ -43,6 +46,8 @@ execution:
   - skill: "format-conversion"
     step_type: "content"
   - skill: "defang-content"
+    step_type: "content"
+  - skill: "language-polish"
     step_type: "content"
   - parallel:
     - skill: "brief-compliance-check"
