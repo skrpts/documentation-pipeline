@@ -43,6 +43,7 @@ execution:
     step_type: "synthesis"
   - skill: "documentation-writing"
     step_type: "generation"
+    prompt: "write-documentation"
   - skill: "format-conversion"
     step_type: "content"
   - skill: "defang-content"
