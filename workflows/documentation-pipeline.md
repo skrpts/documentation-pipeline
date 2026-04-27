@@ -40,6 +40,7 @@ composite_steps:
   - "language-polish"
 execution:
   - skill: "code-analysis"
+    prompt: "analyse-code"
     step_type: "synthesis"
   - skill: "documentation-writing"
     step_type: "generation"
@@ -49,11 +50,14 @@ execution:
   - skill: "defang-content"
     step_type: "content"
   - skill: "language-polish"
+    prompt: "polish-language"
     step_type: "content"
   - parallel:
     - skill: "brief-compliance-check"
+      prompt: "check-brief-compliance"
       step_type: "review"
     - skill: "consistency-check"
+      prompt: "check-consistency"
       step_type: "review"
   - skill: "documentation-checklist"
     step_type: "review"
