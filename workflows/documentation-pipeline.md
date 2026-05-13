@@ -15,8 +15,6 @@ connections:
     type: uses
   - target: llm-service
     type: runs_on
-  - target: documentation-checklist
-    type: uses
   - target: brief-compliance-check
     type: uses
   - target: consistency-check
@@ -32,7 +30,6 @@ output_step: "language-polish"
 composite_steps:
   - "code-analysis"
   - "documentation-writing"
-  - "documentation-checklist"
   - "brief-compliance-check"
   - "consistency-check"
   - "format-conversion"
@@ -46,31 +43,29 @@ execution:
     step_type: "generation"
     prompt: "write-documentation"
   - skill: "format-conversion"
-    step_type: "content"
+    step_type: "local.transform"
   - skill: "defang-content"
-    step_type: "content"
+    step_type: "local.transform"
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
     context:
-      voice_profile: ""
-      grammar_strictness: ""
+      voice_profile: "Neutral professional tone"
+      grammar_strictness: "Professional"
   - parallel:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
       context:
-        audience_profile: ""
-        compliance_brief: ""
-        compliance_depth: ""
+        audience_profile: "General professional audience"
+        compliance_brief: "No specific compliance requirements"
+        compliance_depth: "Standard"
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
       context:
-        voice_profile: ""
-        consistency_strictness: ""
-  - skill: "documentation-checklist"
-    step_type: "review"
+        voice_profile: "Neutral professional tone"
+        consistency_strictness: "Standard"
 ---
 
 ## Overview
