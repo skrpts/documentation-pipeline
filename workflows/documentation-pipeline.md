@@ -138,7 +138,7 @@ Invoke the **markdown-formatting** skill via the **format-documentation** prompt
 Before running this workflow:
 
 1. **No external services required** — paste your source code directly as input. No GitHub access, no file system access, no API keys needed.
-2. **Review the documentation standards** — the `documentation-standards` source document defines formatting conventions. Customize it to match your project's style if needed.
+2. **Review the documentation standards** — the `documentation-standards` source document defines formatting conventions. Customise it to match your project's style if needed.
 3. **Choose your audience** — the documentation depth changes significantly based on who will read it. Specify the audience for best results.
 
 ## Provider Notes
