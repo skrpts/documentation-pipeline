@@ -3,8 +3,8 @@ id: "de2c51ff-74ba-4c80-adb8-f2060d02d12b"
 name: "documentation-pipeline"
 display_name: "Documentation Pipeline"
 description: "Analyses source code and generates comprehensive technical documentation with examples, formatted as clean markdown"
-version: "1.1.22"
-engine: ">=1.0.0"
+version: "1.1.23"
+engine: ">=0.1.0"
 
 # --- Attribution ---
 author:
