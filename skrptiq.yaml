@@ -3,7 +3,7 @@ id: "de2c51ff-74ba-4c80-adb8-f2060d02d12b"
 name: "documentation-pipeline"
 display_name: "Documentation Pipeline"
 description: "Analyses source code and generates comprehensive technical documentation with examples, formatted as clean markdown"
-version: "1.1.29"
+version: "1.1.30"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -23,6 +23,48 @@ tags:
   - "documentation"
 
 # --- Security & Access ---
+dependencies:
+  - id: "4d802a36-2cdd-444e-b3bf-39383793c6b3"
+    name: "brief-compliance-check"
+    version: 1.0.1
+    checksum: "sha256:02f438820a02cadaef50eeb6a84f51c3ca4a104bb20d0fa701958733537791e4"
+  - id: "e59f27f4-21ab-4b14-b171-3e9a6100ebaa"
+    name: "check-brief-compliance"
+    version: 1.0.1
+    checksum: "sha256:74d0176acf505a04763a401dc7cfed400228bd39d7a5aee7f34def738cb92de0"
+  - id: "41cb77d1-e7a5-46dd-a127-6cce685f20b4"
+    name: "check-consistency"
+    version: 1.0.1
+    checksum: "sha256:b7f9b5064dcdf4da89947e5ec50ffe057a6109124a378c1d179e35e63295fdbf"
+  - id: "5824c0e3-2187-4851-b1b4-00a82818b061"
+    name: "code-analysis"
+    version: 1.0.1
+    checksum: "sha256:91056462817a2994df814270be7d84bdf8bcaa82fcd83487742aa3abf650cbdd"
+  - id: "bf15c78d-4452-406e-9d54-a72b1a4797c7"
+    name: "consistency-check"
+    version: 1.0.1
+    checksum: "sha256:46773a1a6a47ad8d258856e7a84fea63af781b29f2156668e597429fdcb37329"
+  - id: "553c54e1-e570-4a07-b95d-51933c619dbc"
+    name: "defang-content"
+    version: 1.0.1
+    checksum: "sha256:45cb59641c6d90b14ad92530f49178bb516f2edf1b67cf009457732ea510cb25"
+  - id: "6fbc6b50-b4c9-465f-b208-1fc453df76b9"
+    name: "format-conversion"
+    version: 1.0.1
+    checksum: "sha256:c1b6c9e681180292ca223c66068766a887579c1f511fa28829c1a820930a3648"
+  - id: "3db66b8b-8758-4503-a555-5330f3f9b3d9"
+    name: "language-polish"
+    version: 1.0.1
+    checksum: "sha256:ca27d401a2049f5508f0c6d5dc387a2fc4b3b4e61b439d5e8f717b448708b18b"
+  - id: "fcab9536-a13e-49c9-b0c3-bb3097682e69"
+    name: "llm-service"
+    version: 1.0.1
+    checksum: "sha256:455c8bf590a9426d830bffd1a741afa058149bc29c58186c34d0d8699bea4bda"
+  - id: "9b1771e0-39b0-4fbc-8d45-738f51b6083a"
+    name: "polish-language"
+    version: 1.0.1
+    checksum: "sha256:2a666b1a1566e45a3d69cf3fac51399a471169184409ef54d588f69b7da7097e"
+
 requires:
   services:
     - "llm-service"
@@ -33,11 +75,11 @@ requires:
 
 # --- Contents ---
 contents:
-  skills: 7
-  prompts: 6
+  skills: 1
+  prompts: 3
   workflows: 1
-  services: 1
+  services: 0
   sources: 1
   documents: 1
   assets: 0
-  total: 17
+  total: 7
