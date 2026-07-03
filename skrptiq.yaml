@@ -3,7 +3,7 @@ id: "de2c51ff-74ba-4c80-adb8-f2060d02d12b"
 name: "documentation-pipeline"
 display_name: "Documentation Pipeline"
 description: "Analyses source code and generates comprehensive technical documentation with examples, formatted as clean markdown"
-version: "1.1.30"
+version: "1.1.31"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -83,3 +83,17 @@ contents:
   documents: 1
   assets: 0
   total: 7
+
+security:
+  status: "pass"
+  scanned_at: "2026-07-03T11:01:45.237Z"
+  scanner_version: "3.3.0"
+  syntactic: "pass"
+  structural: "pass"
+  detected:
+    services: ["llm-service"]
+    permissions: []
+    data_handling: []
+  undeclared: []
+  warnings: []
+  report_url: "https://hub.skrptiq.ai/skrpts/documentation-pipeline/security"

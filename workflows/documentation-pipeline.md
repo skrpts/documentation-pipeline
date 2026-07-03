@@ -39,16 +39,21 @@ execution:
   - skill: "code-analysis"
     prompt: "analyse-code"
     step_type: "synthesis"
+    output: { name: "code_analysis", type: "text" }
   - skill: "documentation-writing"
     step_type: "generation"
     prompt: "write-documentation"
+    output: { name: "documentation", type: "text" }
   - skill: "format-conversion"
     step_type: "local.transform"
+    output: { name: "formatted_docs", type: "text" }
   - skill: "defang-content"
     step_type: "local.transform"
+    output: { name: "sanitised_docs", type: "text" }
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    output: { name: "polished_docs", type: "text" }
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
@@ -56,6 +61,7 @@ execution:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
+      output: { name: "compliance_verdict", type: "decision" }
       context:
         audience_profile: "General professional audience"
         compliance_brief: "No specific compliance requirements"
@@ -63,6 +69,7 @@ execution:
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
+      output: { name: "consistency_verdict", type: "decision" }
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
