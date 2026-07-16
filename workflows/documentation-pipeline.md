@@ -2,7 +2,7 @@
 type: workflow
 id: documentation-pipeline
 title: Documentation Pipeline
-description: "Analyses source code and generates detailed technical documentation with examples, formatted as clean markdown"
+description: "Analyzes source code and generates detailed technical documentation with examples, formatted as clean markdown"
 tags: [Production, Documentation, Learning]
 connections:
   - target: code-analysis
@@ -87,9 +87,9 @@ The pipeline works with any programming language and adapts its output depth bas
 
 **Input:** Source code and programming language
 
-Invoke the **code-analysis** skill via the **analyse-code** prompt. Analyses the code's structure — functions, classes, modules, types, dependencies, and patterns. Produces a structured inventory that the later stages work from.
+Invoke the **code-analysis** skill via the **analyse-code** prompt. Analyzes the code's structure — functions, classes, modules, types, dependencies, and patterns. Produces a structured inventory that the later stages work from.
 
-**Output:** Structural analysis with every documentable element catalogued.
+**Output:** Structural analysis with every documentable element catalogd.
 
 ### Stage 2: Documentation Writing
 
@@ -145,7 +145,7 @@ Invoke the **markdown-formatting** skill via the **format-documentation** prompt
 Before running this workflow:
 
 1. **No external services required** — paste your source code directly as input. No GitHub access, no file system access, no API keys needed.
-2. **Review the documentation standards** — the `documentation-standards` source document defines formatting conventions. Customise it to match your project's style if needed.
+2. **Review the documentation standards** — the `documentation-standards` source document defines formatting conventions. Customize it to match your project's style if needed.
 3. **Choose your audience** — the documentation depth changes significantly based on who will read it. Specify the audience for best results.
 
 ## Provider Notes

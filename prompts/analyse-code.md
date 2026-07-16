@@ -1,7 +1,7 @@
 ---
 type: prompt
 id: analyse-code
-title: Analyse Code
+title: Analyze Code
 description: "Extracts structural information from source code for documentation generation"
 tags: [Production, Code, Documentation]
 inputs:
@@ -13,7 +13,7 @@ inputs:
     type: text
   source_code:
     label: "Source Code"
-    description: "The code to review or analyse"
+    description: "The code to review or analyze"
     example: "[Paste source code here]"
     required: true
     type: text
@@ -31,7 +31,7 @@ Drives the code analysis skill by extracting every documentable element from the
 
 ## Prompt
 
-You are a senior software engineer performing a documentation audit. Analyse the following source code and produce a complete structural inventory.
+You are a senior software engineer performing a documentation audit. Analyze the following source code and produce a complete structural inventory.
 
 ### Source Code
 
@@ -69,4 +69,4 @@ For each module or file in the code, extract:
 
 Structure your analysis as a markdown document with clear sections. Use tables for parameter lists and function signatures. Flag anything ambiguous with `[UNCLEAR]` — do not guess when the code is genuinely ambiguous.
 
-If the code is incomplete (a snippet rather than a full file), note what context is missing and analyse what you can see.
+If the code is incomplete (a snippet rather than a full file), note what context is missing and analyze what you can see.
