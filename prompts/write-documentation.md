@@ -17,6 +17,16 @@ inputs:
     example: "API reference"
     required: true
     type: text
+context_params:
+  code_analysis:
+    label: "Code Analysis"
+    description: "Structural code analysis — the source material for the documentation."
+    required: false
+  usage_examples:
+    label: "Usage Examples"
+    description: "Tiered usage examples to incorporate into the documentation."
+    required: false
+    default_from_previous: true
 connections:
   - target: documentation-writing
     type: derived_from
@@ -35,9 +45,11 @@ Produces technical documentation from the structural analysis performed in the p
 
 You are a technical writer producing documentation for a codebase. Your target audience is: **{{input.audience}}**. The documentation type is: **{{input.doc_type}}**.
 
-Using the code analysis below, write complete documentation.
+Using the code analysis below, write complete documentation. Incorporate the usage examples into the relevant sections rather than treating them as an afterthought.
 
-**Code analysis:** {{steps.Code Analysis.output}}
+**Code analysis:** {{step.context.code_analysis}}
+
+**Usage examples:** {{step.context.usage_examples}}
 
 ### Documentation Requirements
 

@@ -7,6 +7,8 @@ tags: [Production, Documentation, Learning]
 connections:
   - target: code-analysis
     type: uses
+  - target: example-generation
+    type: uses
   - target: documentation-writing
     type: uses
   - target: documentation-standards
@@ -29,6 +31,7 @@ metadata:
 output_step: "language-polish"
 composite_steps:
   - "code-analysis"
+  - "example-generation"
   - "documentation-writing"
   - "brief-compliance-check"
   - "consistency-check"
@@ -40,10 +43,25 @@ execution:
     prompt: "analyse-code"
     step_type: "synthesis"
     output: { name: "code_analysis", type: "text" }
+  - skill: "example-generation"
+    prompt: "generate-examples"
+    step_type: "generation"
+    output: { name: "usage_examples", type: "text" }
+    bindings:
+      code_analysis:
+        from_step: "Code Analysis"
+        field: output
   - skill: "documentation-writing"
     step_type: "generation"
     prompt: "write-documentation"
     output: { name: "documentation", type: "text" }
+    bindings:
+      code_analysis:
+        from_step: "Code Analysis"
+        field: output
+      usage_examples:
+        from_step: "Example Generation"
+        field: output
   - skill: "format-conversion"
     step_type: "local.transform"
     output: { name: "formatted_docs", type: "text" }
@@ -57,6 +75,10 @@ execution:
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
+    bindings:
+      source:
+        from_step: "Documentation Writing"
+        field: output
   - parallel:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
@@ -77,7 +99,7 @@ execution:
 
 ## Overview
 
-This workflow takes source code and produces complete, publication-ready technical documentation. It runs in four stages: structural analysis, documentation writing, example generation, and final formatting. Each stage builds on the output of the previous one, producing progressively richer documentation.
+This workflow takes source code and produces complete, publication-ready technical documentation. It runs in four stages: structural analysis, example generation, documentation writing, and final formatting. Each stage builds on the output of the previous one, producing progressively richer documentation.
 
 The pipeline works with any programming language and adapts its output depth based on the target audience.
 
@@ -91,21 +113,21 @@ Invoke the **code-analysis** skill via the **analyse-code** prompt. Analyzes the
 
 **Output:** Structural analysis with every documentable element catalogd.
 
-### Stage 2: Documentation Writing
+### Stage 2: Example Generation
 
-**Input:** Code analysis from Stage 1, audience and documentation type
+**Input:** Code analysis from Stage 1
 
-Invoke the **documentation-writing** skill via the **write-documentation** prompt. Generates detailed technical documentation: overview, API reference with parameter tables, error conditions, and per-function usage notes. Adapts depth and terminology to the target audience.
+Invoke the **example-generation** skill via the **generate-examples** prompt to create practical, runnable usage examples in three tiers: quick start (copy-paste ready), common patterns (2-4 real-world scenarios), and advanced usage (complex integration). Examples use realistic data and include error handling where appropriate.
+
+**Output:** Tiered usage examples ready for the documentation stage to merge into the final document.
+
+### Stage 3: Documentation Writing
+
+**Input:** Code analysis from Stage 1 and usage examples from Stage 2, plus audience and documentation type
+
+Invoke the **documentation-writing** skill via the **write-documentation** prompt. Generates detailed technical documentation: overview, API reference with parameter tables, error conditions, and per-function usage notes, incorporating the generated examples into the relevant sections. Adapts depth and terminology to the target audience.
 
 **Output:** Complete technical documentation in draft form.
-
-### Stage 3: Example Generation
-
-**Input:** Code analysis and documentation from previous stages
-
-Invoke the **generate-examples** prompt to create practical, runnable usage examples in three tiers: quick start (copy-paste ready), common patterns (2-4 real-world scenarios), and advanced usage (complex integration). Examples use realistic data and include error handling where appropriate.
-
-**Output:** Tiered usage examples ready to merge into the final document.
 
 ### Stage 4: Format and Assemble
 

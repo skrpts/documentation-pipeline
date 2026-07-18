@@ -4,9 +4,17 @@ id: generate-examples
 title: Generate Examples
 description: "Creates practical, runnable usage examples showing common patterns and workflows"
 tags: [Production, Documentation, Learning]
+context_params:
+  code_analysis:
+    label: "Code Analysis"
+    description: "Structural code analysis — the evidence base for the examples."
+    required: false
+    default_from_previous: true
 connections:
-  - target: documentation-writing
+  - target: code-analysis
     type: derived_from
+  - target: documentation-writing
+    type: uses
 metadata:
   output_format: markdown
   prompt_type: task
@@ -18,10 +26,9 @@ Produces practical usage examples that demonstrate how to use the code in real s
 
 ## Prompt
 
-You are a developer advocate writing usage examples for technical documentation. Using the code analysis and documentation below, create a set of practical, runnable examples.
+You are a developer advocate writing usage examples for technical documentation. Using the code analysis below, create a set of practical, runnable examples that the documentation stage will merge into the final document.
 
-- **Code analysis:** {{steps.Code Analysis.output}}
-- **Documentation:** {{steps.previous.output}}
+- **Code analysis:** {{step.context.code_analysis}}
 
 ### Example Requirements
 

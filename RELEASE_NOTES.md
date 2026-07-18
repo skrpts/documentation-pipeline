@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.2.0
+GH#863 (K-045 intent/output-mismatch) — wire the `generate-examples` feeder into the execution DAG. It was defined but never invoked, so the code examples never reached the deliverable. Added a backing `example-generation` skill (from_step resolves by skill title), inserted the step between code analysis and documentation writing, and bound `write-documentation` to consume its output via explicit `from_step` bindings. Converted positional/title step refs in both prompts to `context_params` + `{{step.context.*}}`. Bound `language-polish` `source` to the Documentation Writing deliverable and re-pinned `polish-language` to 1.0.6.
+
 ## v1.1.32
 GH#845 — republish with American English (en-US) content, completing the source-only GH#805 flip that never reached the Hub. Copy only — no functional or behaviour change.
 
