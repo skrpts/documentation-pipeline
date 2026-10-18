@@ -63,10 +63,14 @@ execution:
         from_step: "Example Generation"
         field: output
   - skill: "format-conversion"
-    step_type: "local.transform"
+    prompt: "format-conversion"
+    step_type: "content"
+    context:
+      target_format: "markdown"
     output: { name: "formatted_docs", type: "text" }
   - skill: "defang-content"
-    step_type: "local.transform"
+    prompt: "defang-content"
+    step_type: "validation"
     output: { name: "sanitised_docs", type: "text" }
   - skill: "language-polish"
     prompt: "polish-language"
